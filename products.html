@@ -666,7 +666,12 @@
             $(".navbutton").css("display", "none");
             $(".navbutton2").css("display", "none");
             $(".dropdowntop").css("display", "");
-        }
+        };
+        
+        if ($(window).width() > 1620) {
+
+            $(".cardthree").css("margin-right", "15px")
+        };
 
         $("#flipcard").flip({ trigger: 'hover' });
         $("#flipcard2").flip({ trigger: 'hover' });;
