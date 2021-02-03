@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="images/trainicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown button on hover & focus */
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #2980B9;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 4;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {
+            display: block;
+        }
+
+        img {
+            /* height: 100%;
+            width: 100% */
+        }
+
+        .navbutton {
+            cursor: pointer;
+            margin-right: 4%;
+            white-space: nowrap;
+
+            z-index: 2;
+            color: #ffffff;
+            background-color: #a1a3a5;
+            border-color: #a1a3a5;
+
+
+        }
+
+        .navbutton2 {}
+
+        .navbutton:hover {
+            color: #0d6efd;
+            background-color: #ffffff;
+            border-color: #ffffff;
+        }
+
+
+        .navbar {
+            background: #a1a3a5;
+            height: 90px;
+        }
+
+        .carousel-caption {}
+
+        .textcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px;
+            text-align: center;
+        }
+
+        .card {
+            display: flex;
+            text-align: center;
+        }
+
+        .cardcontainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+
+        .choo {
+            transform: rotateY(180deg);
+            position: absolute;
+            z-index: 1;
+
+
+
+        }
+
+        .navbar-brand {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .flips {
+            height: 23em;
+            width: 20em
+        }
+
+        .bottombar {
+            background: #a1a3a5;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            width: 100%;
+
+
+        }
+
+        .box1 {
+            margin: 2em
+        }
+
+        .textwrap {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: baseline;
+
+        }
+
+        .logowrap {
+            display: flex;
+            flex-direction: row;
+            /* align-self: center; */
+            justify-content: space-evenly;
+
+        }
+
+        #section1 {
+
+            background: url(images/tracksproducts.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            height: auto;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10%;
+        }
+
+        .carousel-control-next-icon {
+            background-image: url(images/backwards.png) !important;
+            height: 150px;
+            width: 100px;
+            transform: scale(-1);
+        }
+
+        .carousel-caption {
+            bottom: 50% !important
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url(images/backwards.png) !important;
+            height: 150px;
+            width: 100px
+        }
+
+        .hfive {
+            font-size: 6em
+        }
+
+        #carouselp {
+            font-size: 2em !important
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        body {
+            background: #F5F1EE;
+            font-family: 'Roboto', sans-serif
+        }
+
+        .card {
+            width: 250px;
+            border-radius: 10px
+        }
+
+        .card-img-top {
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px
+        }
+
+        span.text-muted {
+            font-size: 12px
+        }
+
+        small.text-muted {
+            font-size: 8px
+        }
+
+        h5.mb-0 {
+            font-size: 1rem
+        }
+
+        small.ghj {
+            font-size: 9px
+        }
+
+        .mid {
+            background: #ECEDF1
+        }
+
+        h6.ml-1 {
+            font-size: 13px
+        }
+
+        small.key {
+            text-decoration: underline;
+            font-size: 9px;
+            cursor: pointer
+        }
+
+        .btn-primary {
+            color: #ffffff
+        }
+
+        .btn-primary:focus {
+            box-shadow: none
+        }
+
+        small.justify-content-center {
+            font-size: 9px;
+            cursor: pointer;
+            text-decoration: underline
+        }
+
+        @media screen and (max-width:600px) {
+            .col-sm-4 {
+                margin-bottom: 50px
+            }
+        }
+
+        .justify-content-center {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar sticky-top navbar-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" height="70px"></a>
+
+            <svg class="choochoo choo" xmlns="http://www.w3.org/2000/svg" id="Capa_1" fill="#0d6efd"
+                enable-background="new 0 0 512 512" height="40" viewBox="0 0 512 512" width="512">
+                <g>
+                    <circle cx="478" cy="253.5" r="10" />
+                    <path
+                        d="m488 305.456v-6.956c0-5.51-4.49-10-10-10-2.424 0-4.65.87-6.384 2.313-7.766-5.476-16.385-9.815-25.616-12.781v-80.532c0-33.636-27.364-61-61-61s-61 27.364-61 61v102c0 5.523 4.477 10 10 10h8.597c-4.961 6.243-9.153 13.121-12.434 20.492l-28.163-.058v-214.434h166v94c0 5.51 4.49 10 10 10s10-4.49 10-10v-94h8c5.523 0 10-4.477 10-10v-47c0-5.523-4.477-10-10-10h-252c-5.523 0-10 4.477-10 10v47c0 5.523 4.477 10 10 10h38v94h-108.892l16.536-60.357c.23-.838.355-2.607.355-2.643v-40c0-5.523-4.477-10-10-10h-80c-5.523 0-10 4.477-10 10 0 0 .01 40.046.013 40.071.006.86.111 1.724.343 2.572l16.536 60.357h-16.391c-23.137 0-42.53 16.29-47.342 38h-33.158c-5.523 0-10 4.477-10 10v57c0 5.523 4.477 10 10 10h32v12.961l-39.202 92.123c-1.314 3.089-.991 6.631.86 9.431s4.985 4.485 8.342 4.485h80c.009 0 .017-.001.026-.001 9.131 12.137 23.65 20.001 39.974 20.001 24.07 0 44.219-17.024 48.947-39.711 7.365.025 14.85-.024 22.122 0 4.757 22.65 24.886 39.711 48.93 39.711 24.122 0 44.309-17.17 48.981-39.931 21.196.112 22.354.282 38.921.372 17.266 23.943 45.39 39.56 77.098 39.56 52.383 0 95-42.617 95-95 .001-24.173-9.078-46.26-23.999-63.045zm-234-236.956h232v27h-232zm90 129c0-22.607 18.393-41 41-41s41 18.393 41 41v76.429c-2.964-.28-5.964-.429-9-.429-19.483 0-37.613 5.899-52.704 16h-20.296zm-234-81h60v20h-60zm3.108 40h53.783l-14.521 53h-24.742zm-22.608 73h191.5v100h-220v-71.5c0-15.715 12.785-28.5 28.5-28.5zm-70.5 75v-37h22v37zm62 119h-54.877l31.489-74h23.388zm50 20c-16.542 0-30-13.458-30-30s13.458-30 30-30c13.089 0 24.24 8.429 28.328 20.142-11.717-.04-21.75-.076-28.066-.101-5.66-.023-10.26 4.458-10.262 9.996-.003 5.509 4.544 9.982 10.174 10.005 7.257.03 17.079.065 28.057.103-4.169 11.564-15.248 19.855-28.231 19.855zm120 0c-12.903 0-23.928-8.189-28.155-19.641 11.738.04 21.694.075 27.899.1 5.659.023 10.254-4.458 10.257-9.995.003-5.509-4.54-9.982-10.17-10.005-6.332-.026-16.432-.062-28.23-.103 4.026-11.823 15.232-20.356 28.4-20.356 16.542 0 30 13.458 30 30s-13.459 30-30.001 30zm49.006-39.931c-4.619-22.829-24.835-40.069-49.006-40.069-24.247 0-44.51 17.35-49.045 40.286-7.25-.025-14.674.024-21.923 0-4.564-22.9-24.811-40.286-49.032-40.286-11.247 0-21.637 3.735-30 10.027v-24.006l221.818.458c-1.189 5.993-1.818 12.184-1.818 18.521 0 12.49 2.428 24.423 6.828 35.357-9.53-.094-15.159-.214-27.822-.288zm115.994 39.931c-41.355 0-75-33.645-75-75s33.645-75 75-75 75 33.645 75 75-33.645 75-75 75z" />
+                    <path
+                        d="m417 318.5c-27.57 0-50 22.43-50 50s22.43 50 50 50 50-22.43 50-50-22.43-50-50-50zm0 80c-16.542 0-30-13.458-30-30s13.458-30 30-30 30 13.458 30 30-13.458 30-30 30z" />
+                    <path
+                        d="m252 308.5c5.523 0 10-4.477 10-10v-39c0-5.523-4.477-10-10-10s-10 4.477-10 10v39c0 5.523 4.477 10 10 10z" />
+                    <path
+                        d="m212 308.5c5.523 0 10-4.477 10-10v-39c0-5.523-4.477-10-10-10s-10 4.477-10 10v39c0 5.523 4.477 10 10 10z" />
+                </g>
+            </svg>
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="dropdown dropdowntop" style="display: none;">
+                    <button onclick="myFunction()" class="dropbtn">MENU</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="index.html">Home</a>
+                        <a href="aboutus.html">About Us</a>
+                        <a href="products.html">Products</a>
+                        <a data-bs-toggle="modal" data-bs-target="#exampleModal">Request
+                            Quote</a>
+                    </div>
+                </div>
+                <button class="btn btn-primary navbutton2" data-bs-toggle="modal" data-bs-target="#exampleModal">REQUEST
+                    QUOTE</button>
+                <button class="btn btn-primary navbutton"
+                    onclick="window.location='products.html'"><b>PRODUCTS</b></button>
+
+                <button class="btn btn-primary navbutton" onclick="window.location='aboutus.html'"><b>ABOUT
+                        US</b>
+                </button>
+                <button class="btn btn-primary navbutton" onclick="window.location='index.html'"><b>HOME</b></button>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+
+
+
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Specify Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="fname">Title</label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="fname2">Details</label>
+                    <textarea id="fname2" name="fname2"></textarea>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+
+
+    <!-- PRODUCT CARDS -->
+
+    <section id="section1" data-speed="8" data-type="background">
+
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row mt-5">
+                <div class="col-sm-4">
+                    <div class="card"> <img src="images/modeltrain4.jpg" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small
+                                    class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small
+                                        class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px"
+                                            height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L
+                                                MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div> <small class="text-muted key pl-3">Standard key Features</small>
+                            <div class="mx-3 mt-3 mb-2"><button type="button"
+                                    class="btn btn-primary btn-block"><small>BUILD
+                                        & PRICE</small></button></div> <small
+                                class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card"> <img src="images/modeltrain5.jpg" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small
+                                    class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small
+                                        class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px"
+                                            height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L
+                                                MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div> <small class="text-muted key pl-3">Standard key Features</small>
+                            <div class="mx-3 mt-3 mb-2"><button type="button"
+                                    class="btn btn-primary btn-block"><small>BUILD
+                                        & PRICE</small></button></div> <small
+                                class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card"> <img src="images/modeltrain6.jpg" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small
+                                    class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small
+                                        class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px"
+                                            height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L
+                                                MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div> <small class="text-muted key pl-3">Standard key Features</small>
+                            <div class="mx-3 mt-3 mb-2"><button type="button"
+                                    class="btn btn-primary btn-block"><small>BUILD
+                                        & PRICE</small></button></div> <small
+                                class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-4">
+                    <div class="card"> <img src="images/modeltrain1.jpg" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small
+                                    class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small
+                                        class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px"
+                                            height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L
+                                                MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div> <small class="text-muted key pl-3">Standard key Features</small>
+                            <div class="mx-3 mt-3 mb-2"><button type="button"
+                                    class="btn btn-primary btn-block"><small>BUILD
+                                        & PRICE</small></button></div> <small
+                                class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card"> <img src="images/modeltrain3.jpg" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small
+                                    class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small
+                                        class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px"
+                                            height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L
+                                                MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div> <small class="text-muted key pl-3">Standard key Features</small>
+                            <div class="mx-3 mt-3 mb-2"><button type="button"
+                                    class="btn btn-primary btn-block"><small>BUILD
+                                        & PRICE</small></button></div> <small
+                                class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card"> <img src="images/modeltrain2.jpg" class="card-img-top" width="100%">
+                        <div class="card-body pt-0 px-0">
+                            <div class="d-flex flex-row justify-content-between mb-0 px-3"> <small
+                                    class="text-muted mt-1">STARTING AT</small>
+                                <h6>&dollar;22,495&ast;</h6>
+                            </div>
+                            <hr class="mt-2 mx-3">
+                            <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                                <div class="d-flex flex-column"><span class="text-muted">Fuel Efficiency</span><small
+                                        class="text-muted">L/100KM&ast;</small></div>
+                                <div class="d-flex flex-column">
+                                    <h5 class="mb-0">8.5/7.1</h5><small class="text-muted text-right">(city/Hwy)</small>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between p-3 mid">
+                                <div class="d-flex flex-column"><small class="text-muted mb-1">ENGINE</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/iPtsG7I.png" width="35px"
+                                            height="25px">
+                                        <div class="d-flex flex-column ml-1"><small class="ghj">1.4L
+                                                MultiAir</small><small class="ghj">16V I-4 Turbo</small></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column"><small class="text-muted mb-2">HORSEPOWER</small>
+                                    <div class="d-flex flex-row"><img src="https://imgur.com/J11mEBq.png">
+                                        <h6 class="ml-1">135 hp&ast;</h6>
+                                    </div>
+                                </div>
+                            </div> <small class="text-muted key pl-3">Standard key Features</small>
+                            <div class="mx-3 mt-3 mb-2"><button type="button"
+                                    class="btn btn-primary btn-block"><small>BUILD
+                                        & PRICE</small></button></div> <small
+                                class="d-flex justify-content-center text-muted">*Legal Disclaimer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" fill="#0d6efd" class="bi bi-justify"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-." />
+        </svg>
+    </div>
+    <br>
+    <br>
+
+
+    <div class=" bottombar" style="color: white;">
+        <div class="textwrap">
+            <div class="box1">
+                <h1>Lorem</h1>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla
+                    pariatur. Excepteur sint occaeca
+                    commodo consequat. Duis au dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea
+                    commodo consequat. Duis au
+                </p>
+
+            </div>
+            <div class="box1">
+                <h1>Lorem</h1>
+
+                <ul>
+                    <li>enim ad</li>
+                    <li>Duis aute</li>
+                    <li>re dolor </li>
+                    <li>ullamco laboris </li>
+                    <li> aliquip ex</li>
+                </ul>
+            </div>
+            <div class="box1">
+                <h1>Lorem</h1>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla
+
+                </p>
+            </div>
+            <div class="box1" style="white-space: nowrap;">
+                <h1>Lorem</h1>
+                <p>MONDAY 9:00-2:00</p>
+                <p>TUESDAY 9:00-2:00</p>
+                <p>WEDSDAY 9:00-2:00</p>
+                <p>THURSDAY 9:00-2:00</p>
+                <p>FRIDAY 9:00-2:00</p>
+                <p>SATURDAY 9:00-2:00</p>
+                <p>SUNDAY 9:00-2:00</p>
+            </div>
+        </div>
+        <div class="logowrap">
+            <img src="images/Logo.png" height="80px" width="300px">
+            <img src="images/links.png" height="80px" width="350px">
+        </div>
+    </div>
+
+
+
+    <script>
+
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            $('.choochoo').css('left', 20 + (scroll / 2.6));
+
+        });
+
+        if ($(window).width() < 775) {
+
+            $(".navbutton").css("display", "none");
+            $(".navbutton2").css("display", "none");
+            $(".dropdowntop").css("display", "");
+        }
+
+        $("#flipcard").flip({ trigger: 'hover' });
+        $("#flipcard2").flip({ trigger: 'hover' });;
+        $("#flipcard3").flip({ trigger: 'hover' });;
+
+
+
+    </script>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
